@@ -60,7 +60,7 @@ export default function Workout({workout}){
 
             <span>
 
-              ◷ {workout.duration} lowest
+              ◷ {workout.duration} min
 
             </span>
 
