@@ -125,13 +125,14 @@ export default function Home(){
 
             </div>
 
-            <select
+          <div  className="relative" >
+                  <select
 
               value={sort}
 
               onChange={(e)=>handleSort(e.target.value)}
 
-              className="bg-[#111] border border-gray-700 px-4 py-2 rounded-full"
+              className="bg-[#111] border border-gray-700 px-4 py-2 rounded-full  appearance-none text-sm"
 
             >
 
@@ -154,6 +155,12 @@ export default function Home(){
               </option>
 
             </select>
+               <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+
+                ▼
+
+            </span>
+          </div>
 
           </div>
 
