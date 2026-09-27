@@ -14,6 +14,8 @@ export default function MyPlan(){
 
     saved,
 
+    done,
+
     removeFromPlan,
 
     removeFromSaved,
@@ -25,12 +27,12 @@ export default function MyPlan(){
 
 
 
+
   const [active,setActive] = useState("plan");
 
 
 
   const data = active === "plan" ? plan : saved;
-
 
 
 
@@ -108,13 +110,9 @@ export default function MyPlan(){
 
           <div className="bg-[#111] p-6 rounded-xl">
 
-
             <p className="text-gray-400">
-
               Exercises
-
             </p>
-
 
 
             <h2 className="text-3xl font-bold">
@@ -122,8 +120,6 @@ export default function MyPlan(){
               {plan.length}
 
             </h2>
-
-
 
           </div>
 
@@ -135,13 +131,11 @@ export default function MyPlan(){
 
           <div className="bg-[#111] p-6 rounded-xl">
 
-
             <p className="text-gray-400">
 
               Minutes
 
             </p>
-
 
 
             <h2 className="text-3xl font-bold">
@@ -151,7 +145,6 @@ export default function MyPlan(){
             </h2>
 
 
-
           </div>
 
 
@@ -162,13 +155,11 @@ export default function MyPlan(){
 
           <div className="bg-[#111] p-6 rounded-xl">
 
-
             <p className="text-gray-400">
 
               Calories
 
             </p>
-
 
 
             <h2 className="text-3xl font-bold">
@@ -178,8 +169,8 @@ export default function MyPlan(){
             </h2>
 
 
-
           </div>
+
 
 
 
@@ -226,6 +217,7 @@ export default function MyPlan(){
 
 
 
+
           <button
 
             onClick={()=>setActive("saved")}
@@ -249,6 +241,7 @@ export default function MyPlan(){
             Saved
 
           </button>
+
 
 
 
@@ -280,11 +273,13 @@ export default function MyPlan(){
 
 
 
+
             <p className="text-gray-400 mt-3">
 
               Browse the library and add a lift to get today moving.
 
             </p>
+
 
 
 
@@ -310,7 +305,11 @@ export default function MyPlan(){
 
 
 
+
+
           :
+
+
 
 
 
@@ -337,6 +336,7 @@ export default function MyPlan(){
 
 
 
+
                   <div className="flex items-center gap-4">
 
 
@@ -355,8 +355,9 @@ export default function MyPlan(){
 
 
 
-                    <div>
 
+
+                    <div>
 
 
                       <h3 className="text-lg font-bold uppercase">
@@ -368,11 +369,13 @@ export default function MyPlan(){
 
 
 
+
                       <p className="text-gray-400 text-sm">
 
                         {item.equipment}
 
                       </p>
+
 
 
 
@@ -423,6 +426,7 @@ export default function MyPlan(){
 
 
 
+
                   <div className="flex items-center gap-3">
 
 
@@ -454,20 +458,36 @@ export default function MyPlan(){
                       active==="plan" &&
 
 
+
                       <button
 
-                        onClick={markDone}
+                        onClick={()=>markDone(item.id)}
 
-                        className="bg-[#ccff00] text-black px-5 py-2 rounded-full text-sm font-bold flex items-center gap-2"
+                        className="bg-[#ccff00] text-black px-5 py-2 rounded-full text-sm font-bold"
 
                       >
 
-                        ✓ Mark as Done
+
+                        {
+
+                          done.includes(item.id)
+
+                          ?
+
+                          "✓ Completed"
+
+                          :
+
+                          "✓ Mark as Done"
+
+                        }
+
 
                       </button>
 
 
                     }
+
 
 
 
@@ -483,24 +503,29 @@ export default function MyPlan(){
 
                         if(active==="plan"){
 
+
                           removeFromPlan(item.id);
+
 
                         }
 
                         else{
 
+
                           removeFromSaved(item.id);
+
 
                         }
 
 
                       }}
 
-                      className="border border-red-500 text-red-400 px-4 py-2 rounded-full"
+
+                      className="text-gray-400 text-xl"
 
                     >
 
-                      X
+                      ×
 
                     </button>
 
@@ -509,6 +534,8 @@ export default function MyPlan(){
 
 
                   </div>
+
+
 
 
 
@@ -523,7 +550,10 @@ export default function MyPlan(){
 
 
 
+
+
           </div>
+
 
 
 
@@ -531,7 +561,10 @@ export default function MyPlan(){
 
 
 
+
+
       </div>
+
 
 
 

@@ -3,9 +3,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
+
 const FitlogContext = createContext();
 
+
+
 export function FitlogProvider({ children }) {
+
+
 
   const [plan,setPlan] = useState(()=>{
 
@@ -21,6 +26,10 @@ export function FitlogProvider({ children }) {
 
   });
 
+
+
+
+
   const [saved,setSaved] = useState(()=>{
 
     if(typeof window !== "undefined"){
@@ -35,45 +44,52 @@ export function FitlogProvider({ children }) {
 
   });
 
+
+
+
+
+  const [done,setDone] = useState([]);
+
+
+
+
   useEffect(()=>{
 
-    if(typeof window !== "undefined"){
-
-      localStorage.setItem(
-
-        "plan",
-
-        JSON.stringify(plan)
-
-      );
-
-    }
+    localStorage.setItem(
+      "plan",
+      JSON.stringify(plan)
+    );
 
   },[plan]);
 
+
+
+
+
   useEffect(()=>{
 
-    if(typeof window !== "undefined"){
-
-      localStorage.setItem(
-
-        "saved",
-
-        JSON.stringify(saved)
-
-      );
-
-    }
+    localStorage.setItem(
+      "saved",
+      JSON.stringify(saved)
+    );
 
   },[saved]);
 
+
+
+
+
+
+
+
+
   function addToPlan(workout){
 
+
     const alreadyAdded = plan.find(
-
       item => item.id === workout.id
-
     );
+
 
     if(alreadyAdded){
 
@@ -83,6 +99,8 @@ export function FitlogProvider({ children }) {
 
     }
 
+
+
     if(plan.length >= 5){
 
       toast.error("Maximum 5 workouts allowed");
@@ -91,25 +109,32 @@ export function FitlogProvider({ children }) {
 
     }
 
+
+
     setPlan([
-
       ...plan,
-
       workout
-
     ]);
+
 
     toast.success("Added to today's plan");
 
+
   }
+
+
+
+
+
+
 
   function addToSaved(workout){
 
+
     const alreadySaved = saved.find(
-
       item => item.id === workout.id
-
     );
+
 
     if(alreadySaved){
 
@@ -119,65 +144,100 @@ export function FitlogProvider({ children }) {
 
     }
 
+
     setSaved([
-
       ...saved,
-
       workout
-
     ]);
+
 
     toast.success("Saved");
 
+
   }
+
+
+
+
+
+
 
   function removeFromPlan(id){
 
+
     setPlan(
-
       plan.filter(
-
         item => item.id !== id
-
       )
-
     );
+
 
     toast.success("Removed from plan");
 
+
   }
+
+
+
+
+
+
 
   function removeFromSaved(id){
 
+
     setSaved(
-
       saved.filter(
-
         item => item.id !== id
-
       )
-
     );
+
 
     toast.success("Removed from saved");
 
+
   }
 
-  function markDone(){
+
+
+
+
+
+
+  function markDone(id){
+
+
+    setDone([
+      ...done,
+      id
+    ]);
+
 
     toast.success("Workout completed");
 
+
   }
+
+
+
+
+
+
 
   return(
 
+
     <FitlogContext.Provider
 
+
       value={{
+
 
         plan,
 
         saved,
+
+        done,
 
         addToPlan,
 
@@ -189,7 +249,9 @@ export function FitlogProvider({ children }) {
 
         markDone
 
+
       }}
+
 
     >
 
@@ -197,9 +259,17 @@ export function FitlogProvider({ children }) {
 
     </FitlogContext.Provider>
 
+
   );
 
+
 }
+
+
+
+
+
+
 
 export function useFitlog(){
 
