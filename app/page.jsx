@@ -125,14 +125,14 @@ export default function Home(){
 
             </div>
 
-          <div  className="relative ml-1.5" >
+          <div  className="relative" >
                   <select
 
               value={sort}
 
               onChange={(e)=>handleSort(e.target.value)}
 
-              className="bg-[#111] border border-gray-700 px-4 py-2 pr-12 rounded-full  appearance-none text-sm"
+              className="bg-[#111] border border-gray-700 px-4 py-2 pr-12 pl-6 rounded-full  appearance-none text-sm"
 
             >
 
