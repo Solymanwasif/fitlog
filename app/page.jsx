@@ -155,7 +155,7 @@ export default function Home(){
               </option>
 
             </select>
-               <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+               <span className="absolute pr-1 top-1/2 -translate-y-1/2 pointer-events-none">
 
                 ▼
 
