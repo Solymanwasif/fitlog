@@ -1,6 +1,4 @@
-Replace your current `README.md` with this complete version.
 
-```md
 # 💪 FitLog - Workout Library
 
 ## 🌐 Live Website
@@ -150,21 +148,21 @@ The layout automatically adjusts for different screen sizes.
 
 ## All Workout Data
 
-```
+
 https://api.api-store.workers.dev/api/fitlog
-```
+
 
 ## Single Workout Details
 
-```
+
 https://api.api-store.workers.dev/api/fitlog/:id
-```
+
 
 ---
 
 # 📂 Project Structure
 
-```
+
 app
 │
 ├── components
@@ -188,7 +186,6 @@ app
 ├── layout.jsx
 ├── globals.css
 └── not-found.jsx
-```
 
 ---
 
@@ -202,27 +199,27 @@ git clone https://github.com/Solymanwasif/fitlog.git
 
 Go to the project folder:
 
-```bash
+bash
 cd fitlog
-```
+
 
 Install dependencies:
 
-```bash
+bash
 npm install
-```
+
 
 Run development server:
-
-```bash
+ https://fitlog-kappa-swart.vercel.app/
+bash
 npm run dev
-```
+
 
 Open:
 
-```
+
 http://localhost:3000
-```
+
 
 ---
 
@@ -232,8 +229,8 @@ The project is deployed using Vercel.
 
 Deployment platform:
 
-```
+
 https://fitlog-kappa-swart.vercel.app/
-```
+
 
 ---
