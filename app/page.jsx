@@ -125,7 +125,7 @@ export default function Home(){
 
             </div>
 
-          <div  className="relative" >
+          <div  className="relative ml-1.5" >
                   <select
 
               value={sort}
