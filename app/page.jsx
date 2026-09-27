@@ -153,12 +153,13 @@ export default function Home(){
                 Sort By Rating
 
               </option>
-                       <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none">
+                       
+            </select>
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs pointer-events-none">
 
                 ▼
 
             </span>
-            </select>
            
           </div>
 
