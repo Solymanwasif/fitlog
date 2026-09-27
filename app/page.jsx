@@ -132,7 +132,7 @@ export default function Home(){
 
               onChange={(e)=>handleSort(e.target.value)}
 
-              className="bg-[#111] border border-gray-700 px-4 py-2 rounded-full  appearance-none text-sm"
+              className="bg-[#111] border border-gray-700 px-4 py-2 pr-12 rounded-full  appearance-none text-sm"
 
             >
 
